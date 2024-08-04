@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    background: url(pride.avif) center;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Hide any overflow content */
+}
+.container{
+    background-color: rgba(255, 255, 255, 0.1);
+    position: relative;
+    backdrop-filter: blur(40px);
+    border-radius: 30px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(215, 215, 215, 0.1);
+    width: 768px;
+    min-height: 480px;
+    overflow: hidden;
+}
+.container p{
+    font-size: 16px;
+    margin: 20px 0;
+    overflow: hidden; /* Hide any overflow content */
+}
+.container a{
+    text-decoration: none;
+    overflow: hidden; /* Hide any overflow content */
+}
+.container h1{
+    color: whitesmoke;
+    margin: 15px 0;
+    overflow: hidden; /* Hide any overflow content */
+}
+.container button{
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    padding: 10px 0;
+    width: 100%;
+    border: 3px solid transparent;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.container button:hover {
+    color: white;
+    background-image: linear-gradient(to right, rgb(237, 34, 36), 
+    rgb(243, 91, 34), 
+    rgb(249, 150, 33), 
+    rgb(245, 193, 30), 
+    rgb(241, 235, 27) 27%, 
+    rgb(241, 235, 27), 
+    rgb(241, 235, 27) 33%, 
+    rgb(99, 199, 32), 
+    rgb(12, 155, 73), 
+    rgb(33, 135, 141), 
+    rgb(57, 84, 165), 
+    rgb(97, 55, 155), 
+    rgb(147, 40, 142));
+    border: 3px solid white;
+}
+.container form{
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+    height: 100%;
+    overflow: hidden; /* Hide any overflow content */
+}
+.container input{
+    background-color: white;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 15px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+    overflow: hidden; /* Hide any overflow content */
+}
+.form-container{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%; /* Set width to 100% to ensure the entire container is covered */
+    transition: transform 0.6s ease-in-out; /* Use transform property for smoother transition */
+    overflow: hidden; /* Hide any overflow content */
+}
+.toggle-container{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1000;
+    transition: all 0.6s ease-in-out;
+}
+span{
+    font-weight: 500;
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+}
+.login{
+    left: 0;
+    width: 50%;
+    z-index: 2;
+    transform: translateX(0); /* Ensure the active form is fully visible */
+}
+.register{
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+    transform: translateX(100%); /* Move the inactive form off-screen */
+    overflow: hidden; /* Hide any overflow content */
+}
+.form-container form a{
+    color: white;
+    font-size: 14px;
+    margin: 5px 0;
+    overflow: hidden; /* Hide any overflow content */
+}
+.toggle{
+    height: 100%;
+    background: url(pride.avif) center;
+    background-size: cover;
+    object-fit: cover;
+    color: darkmagenta;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all 0.5s ease-in-out;
+}
+.toggle-panel{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+.right{
+    right: 0;
+    transform: translateX(0);
+}
+.container button.hidden{
+    background-color: white;
+    border: 2px solid white;
+    color: black;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+    overflow: hidden; /* Hide any overflow content */
+}
+.container button.hidden:hover{
+    background-color: transparent;
+    color: white;
+    overflow: hidden; /* Hide any overflow content */
+}
+.container.active .right{
+    transform: translateX(200%);
+    overflow: hidden; /* Hide any overflow content */
+}
+.container.active .toggle-container{
+    transform: translateX(-100%);
+    overflow: hidden; /* Hide any overflow content */
+}
+.container.active .toggle{
+    transform: translateX(50%);
+    overflow: hidden; /* Hide any overflow content */
+}
+.container.active .login{
+    display: none;
+    overflow: hidden; /* Hide any overflow content */
+}
+.container.active .register{
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    overflow: hidden; /* Hide any overflow content */
+}
+.left{
+    transform: translateX(-200%);
+}
+.container.container .left{
+    transform: translateX(0);
+}
